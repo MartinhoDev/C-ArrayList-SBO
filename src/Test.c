@@ -21,7 +21,7 @@ void menuSmall(){
 
     switch(ArrayList_new(&numberList, sizeof(short))){
         case FALSE:
-            fprintf(stderr, "Error when creating Array List, closing program...\n");
+            fprintf(stderr, "Error creating Array List, closing program...\n");
             exit(1);
     }
 
@@ -56,10 +56,10 @@ void menuSmall(){
                 scanf("%zu", &indexBuffer);
                 switch(ArrayList_remove(&numberList, indexBuffer)){
                 case TRUE:
-                    printf("Removed sucessufully!\n");
+                    printf("Removed successfully!\n");
                     break;
                 case FALSE:
-                    fprintf(stderr, "Error when removing from list!\n");
+                    fprintf(stderr, "Error removing from list!\n");
                     break;
                 }
                 break;
@@ -68,7 +68,7 @@ void menuSmall(){
                 scanf("%zu", &indexBuffer);
                 ptr = ArrayList_get(&numberList, indexBuffer);
                 if(!ptr){
-                    printf("Error when getting from the list!\n");
+                    printf("Error getting from the list!\n");
                 } else{
                     printf("The number is: %hd\n", *((short*)ptr));
                 }
@@ -79,7 +79,7 @@ void menuSmall(){
             case '0':
                 ArrayList_delete(&numberList);
                 exe = FALSE;
-                printf("Array List deleted sucefully, closing program!\n");
+                printf("Array List deleted successfully, closing program!\n");
                 break;
             default:
                 printf("Invalid option!\n");
@@ -97,7 +97,7 @@ void menuBig(){
 
     switch(ArrayList_new(&namesList, 1024)){
         case FALSE:
-            fprintf(stderr, "Error when creating Array List, closing program...\n");
+            fprintf(stderr, "Error creating Array List, closing program...\n");
             exit(1);
     }
 
@@ -120,7 +120,7 @@ void menuBig(){
                         printf("Added to the list successfully!\n");
                         break;
                     case FALSE:
-                        fprintf(stderr, "Error when adding to list!\n");
+                        fprintf(stderr, "Error adding to list!\n");
                         break;
                 }
                 break;
@@ -132,7 +132,7 @@ void menuBig(){
                     printf("Removed sucessufully!\n");
                     break;
                 case FALSE:
-                    fprintf(stderr, "Error when removing from list!\n");
+                    fprintf(stderr, "Error removing from list!\n");
                     break;
                 }
                 break;
@@ -141,7 +141,7 @@ void menuBig(){
                 scanf("%zu", &indexBuffer);
                 ptr = ArrayList_get(&namesList, indexBuffer);
                 if(!ptr){
-                    printf("Error when getting from the list!\n");
+                    printf("Error getting from the list!\n");
                 } else{
                     printf("The name is: %s\n", (char*)ptr);
                 }
